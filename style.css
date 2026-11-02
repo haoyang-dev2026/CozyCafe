@@ -1,0 +1,705 @@
+
+/* =========================
+   1. GLOBAL SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: #30251f;
+    background: #faf8f4;
+    line-height: 1.7;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+h1, h2, h3 {
+    font-family: "Playfair Display", serif;
+    line-height: 1.2;
+}
+
+
+/* =========================
+   2. NAVIGATION
+========================= */
+
+.header {
+    background: #faf8f4;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #eee8df;
+}
+
+.navbar {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #a77b58;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    color: #62554b;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #a77b58;
+}
+
+.nav-button {
+    background: #493426;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 4px;
+    font-size: 13px;
+    transition: background 0.3s;
+}
+
+.nav-button:hover {
+    background: #a77b58;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   3. HERO SECTION
+========================= */
+
+.hero {
+    min-height: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    background:
+        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=90")
+        center/cover no-repeat;
+
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(28, 20, 15, 0.82),
+        rgba(28, 20, 15, 0.35)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 40px;
+    padding-bottom: 70px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 22px;
+    color: #d5b89a;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 82px);
+    margin-bottom: 24px;
+}
+
+.hero h1 span {
+    color: #d9b99a;
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 490px;
+    font-size: 16px;
+    color: #eee5dc;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.button-primary {
+    background: #a77b58;
+    color: white;
+}
+
+.button-primary:hover {
+    background: #805b3e;
+    transform: translateY(-2px);
+}
+
+.button-outline {
+    border: 1px solid white;
+    color: white;
+}
+
+.button-outline:hover {
+    background: white;
+    color: #30251f;
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 25px;
+    right: 5%;
+    z-index: 1;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #eee5dc;
+}
+
+
+/* =========================
+   4. ABOUT SECTION
+========================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 85px;
+}
+
+.about-image img {
+    height: 480px;
+    border-radius: 5px;
+}
+
+.about-content h2,
+.section-heading h2,
+.contact h2 {
+    font-size: clamp(38px, 5vw, 54px);
+    margin-bottom: 25px;
+}
+
+.about-content h2 span,
+.section-heading h2 span,
+.contact h2 span {
+    color: #a77b58;
+    font-style: italic;
+}
+
+.dark-eyebrow {
+    color: #a77b58;
+}
+
+.about-content p:not(.eyebrow) {
+    color: #74665b;
+    margin-bottom: 18px;
+    font-size: 15px;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #805b3e;
+    font-weight: 700;
+    border-bottom: 1px solid #a77b58;
+    padding-bottom: 5px;
+}
+
+
+/* =========================
+   5. MENU SECTION
+========================= */
+
+.menu-section {
+    background: #f0ebe3;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading > p:last-child {
+    color: #74665b;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.menu-card {
+    background: #faf8f4;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(55, 39, 27, 0.1);
+}
+
+.menu-card img {
+    height: 250px;
+}
+
+.menu-info {
+    padding: 25px;
+}
+
+.menu-info h3 {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.menu-info p {
+    color: #74665b;
+    font-size: 14px;
+    min-height: 48px;
+    margin-bottom: 15px;
+}
+
+.menu-info span {
+    color: #a77b58;
+    font-weight: 700;
+}
+
+
+/* =========================
+   6. ATMOSPHERE SECTION
+========================= */
+
+.atmosphere {
+    background: #493426;
+    color: white;
+}
+
+.atmosphere-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.atmosphere-content h2 {
+    font-size: clamp(42px, 5vw, 60px);
+    margin-bottom: 25px;
+}
+
+.atmosphere-content > p:not(.eyebrow) {
+    color: #d8c8ba;
+    margin-bottom: 30px;
+}
+
+.atmosphere-image img {
+    height: 420px;
+    border-radius: 5px;
+}
+
+.button-light {
+    background: #faf8f4;
+    color: #493426;
+}
+
+.button-light:hover {
+    background: #d9b99a;
+}
+
+
+/* =========================
+   7. CONTACT SECTION
+========================= */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.contact-description {
+    color: #74665b;
+    margin-bottom: 30px;
+    max-width: 400px;
+}
+
+.hours-card {
+    background: #f0ebe3;
+    padding: 40px;
+    border-radius: 5px;
+}
+
+.hours-card h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 13px;
+    margin-bottom: 18px;
+    color: #62554b;
+}
+
+.hours-divider {
+    height: 1px;
+    background: #d8cfc3;
+    margin: 28px 0;
+}
+
+.hours-card p {
+    color: #62554b;
+    font-size: 14px;
+}
+
+.hours-card .small-note {
+    margin-top: 15px;
+    font-size: 11px;
+    color: #95877b;
+}
+
+
+/* =========================
+   8. FOOTER
+========================= */
+
+.footer {
+    background: #30251f;
+    color: #eee5dc;
+    padding: 45px 0;
+    text-align: center;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.footer-content > p {
+    font-size: 13px;
+    color: #c6b5a5;
+}
+
+.copyright {
+    margin-top: 25px;
+    font-size: 11px !important;
+}
+
+
+/* =========================
+   9. MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    /* General spacing */
+    .section-padding {
+        padding: 65px 0;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    /* Navigation */
+    .navbar {
+        height: 70px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #faf8f4;
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 5% 20px;
+        border-bottom: 1px solid #eee8df;
+        z-index: 100;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 13px 0;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 620px;
+        background-position: 60% center;
+    }
+
+    .hero-content {
+        padding-top: 35px;
+        padding-bottom: 80px;
+    }
+
+    .hero h1 {
+        font-size: clamp(38px, 10vw, 46px);
+        line-height: 1.15;
+        margin-bottom: 20px;
+    }
+
+    .hero-description {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .hero-buttons .button {
+        padding: 13px 18px;
+        font-size: 12px;
+    }
+
+    .hero-bottom {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+        right: 5%;
+        bottom: 20px;
+    }
+
+    /* About Section */
+    .about-grid,
+    .atmosphere-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+
+    .about-content h2,
+    .section-heading h2,
+    .contact h2 {
+        font-size: clamp(34px, 9vw, 42px);
+    }
+
+    /* Menu Section */
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .menu-card img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+    }
+
+    .menu-info {
+        padding: 22px;
+    }
+
+    /* Atmosphere Section */
+    .atmosphere-image img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+    }
+
+    .atmosphere-content h2 {
+        font-size: clamp(38px, 10vw, 48px);
+    }
+
+    /* Contact Section */
+    .hours-card {
+        padding: 28px 22px;
+    }
+
+    .hours-row {
+        font-size: 12px;
+    }
+
+    .hours-card h3 {
+        font-size: 22px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 40px 0;
+    }
+
+    .copyright {
+        font-size: 10px !important;
+    }
+}
+
+
+/* =========================
+   10. SMALL MOBILE SCREENS
+========================= */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-buttons .button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hours-row {
+        font-size: 10px;
+        gap: 8px;
+    }
+}
+
+
+/* =========================
+   11. PROFESSIONAL ANIMATIONS
+========================= */
+
+/* Smooth image zoom */
+.menu-card img,
+.about-image img,
+.atmosphere-image img {
+    transition: transform 0.6s ease;
+}
+
+.menu-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Smooth button interaction */
+.button,
+.nav-button {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.button:hover,
+.nav-button:hover {
+    box-shadow: 0 8px 20px rgba(48, 37, 31, 0.15);
+}
+
+/* Scroll reveal animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Accessibility: respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
