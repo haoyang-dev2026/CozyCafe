@@ -6,10 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cozy Cafe | Good Coffee, Slow Moments</title>
+    <!-- SEO Title -->
+     <title>Cozy Cafe Kuala Lumpur | Coffee & Fresh Pastries</title>
+     
+     <!-- SEO Description -->
+      <meta name="description"
+            content="Discover Cozy Cafe in Kuala Lumpur. Enjoy freshly brewed coffee, delicious pastries and a warm, relaxing atmosphere.">
 
-    <meta name="description"
-        content="Discover Cozy Cafe — a warm and welcoming place for specialty coffee, fresh pastries and slow moments.">
 
     <meta name="theme-color" content="#f8f5f0">
 
@@ -331,6 +334,47 @@
                         Chat With Us on WhatsApp
 
                     </a>
+                    
+                    <!-- Contact Form -->
+                     <form id="contactForm" class="contact-form">
+                         <h3>Send Us a Message</h3>
+                         <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea
+                            id="message"
+                            name="message"
+                            rows="4"
+                            placeholder="Write your message..."
+                            required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="button button-primary">
+                            Send Message
+                        </button>
+                        
+                        <p id="formMessage" aria-live="polite"></p>
+                    
+                    </form>
 
                 </div>
 
@@ -354,9 +398,7 @@
                     <h3>Location</h3>
 
                     <p>
-                        <p>
-                            Jalan Bukit Bintang, Kuala Lumpur
-                        </p>
+                        Jalan Bukit Bintang, Kuala Lumpur
                     </p>
 
                     <p class="small-note">
@@ -394,6 +436,10 @@
 
     </footer>
 
+    <!-- Back To Top Button -->
+    <button id="backToTop" aria-label="Back to top">
+        ↑
+    </button>
 
     <script src="script.js"></script>
 

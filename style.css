@@ -703,3 +703,107 @@ h1, h2, h3 {
         transform: none;
     }
 }
+
+/* =========================
+   BACK TO TOP BUTTON
+========================= */
+
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #493426;
+    color: white;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#backToTop:hover {
+    background: #70543e;
+    transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+    #backToTop {
+        right: 18px;
+        bottom: 20px;
+    }
+}
+
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+.contact-form {
+    margin-top: 35px;
+    max-width: 450px;
+}
+
+.contact-form h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+
+    border: 1px solid #ddd3c8;
+    border-radius: 6px;
+
+    background: #fff;
+    color: #30251f;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ae805e;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+#formMessage {
+    margin-top: 12px;
+    font-size: 14px;
+}

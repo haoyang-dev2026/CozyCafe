@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://haoyang-dev2026.github.io/CozyCafe/sitemap.xml

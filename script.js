@@ -93,3 +93,115 @@ if (prefersReducedMotion || !("IntersectionObserver" in window)) {
     });
 
 }
+
+
+// =========================
+// 4. BACK TO TOP BUTTON
+// =========================
+
+const backToTop = document.getElementById("backToTop");
+
+// Show button when scrolling down
+
+window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 400) {
+        backToTop.classList.add("show");
+    } else {
+        backToTop.classList.remove("show");
+    }
+
+});
+
+// Scroll back to top when clicked
+
+backToTop.addEventListener("click", function () {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+
+// =========================
+// 5. CONTACT FORM VALIDATION
+// =========================
+
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+contactForm.addEventListener("submit", function (event) {
+
+    // Prevent the page from refreshing
+
+    event.preventDefault();
+
+    // Get user input
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Check empty fields
+
+    if (name === "" || email === "" || message === "") {
+
+        formMessage.textContent = "Please fill in all fields.";
+        formMessage.style.color = "red";
+
+        return;
+    }
+
+    // Check email format
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email)) {
+
+        formMessage.textContent = "Please enter a valid email address.";
+        formMessage.style.color = "red";
+
+        return;
+    }
+
+
+    // =========================
+    // 6. WHATSAPP INTEGRATION
+    // =========================
+
+    // Cafe WhatsApp number (Malaysia)
+
+    const phoneNumber = "60192921240";
+
+    // Prepare WhatsApp message
+
+    const whatsappMessage =
+        "Hello Cozy Cafe!\n\n" +
+        "My name is " + name + ".\n" +
+        "Email: " + email + "\n\n" +
+        "Message: " + message;
+
+    // Create WhatsApp URL
+
+    const whatsappURL =
+        "https://wa.me/" + phoneNumber +
+        "?text=" + encodeURIComponent(whatsappMessage);
+
+    // Open WhatsApp
+
+    window.open(whatsappURL, "_blank");
+
+    // Show confirmation message
+
+    formMessage.textContent =
+        "Opening WhatsApp... Please send your message there.";
+
+    formMessage.style.color = "green";
+
+    // Clear form
+
+    contactForm.reset();
+
+});
